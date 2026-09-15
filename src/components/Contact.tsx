@@ -10,16 +10,26 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     setError(false);
+    const form = e.currentTarget;
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/akshayavinodkunnathu@gmail.com", {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) throw new Error("Missing Web3Forms access key");
+
+      const formData = new FormData(form);
+      formData.append("access_key", accessKey);
+      formData.append("subject", `New ${siteContent.legalName} website enquiry`);
+      formData.append("from_name", siteContent.legalName);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(e.currentTarget),
+        body: formData,
       });
 
-      if (!response.ok) throw new Error("Unable to send enquiry");
+      const result = (await response.json()) as { success?: boolean };
+      if (!response.ok || !result.success) throw new Error("Unable to send enquiry");
       setSent(true);
+      form.reset();
     } catch {
       setError(true);
     } finally {
@@ -46,8 +56,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="hidden" name="_subject" value="New Diamond SS Project Enquiry" />
-                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="to_email" value={siteContent.email} />
                 <div className="mb-9 border-b border-plate-line pb-7">
                   <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-safety-dim">
                     Start a project
@@ -61,12 +70,13 @@ export default function Contact() {
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Company" name="company" />
-                  <Field label="Contact name" name="name" />
-                  <Field label="Email" name="email" type="email" />
-                  <Field label="Phone" name="phone" type="tel" />
+                  <Field label="Name" name="name" required />
+                  <Field label="Company" name="company" required />
+                  <Field label="Email" name="email" type="email" required />
+                  <Field label="Phone" name="phone" type="tel" required />
+                  <SelectField label="Service required" name="service_required" />
                 </div>
-                <Field label="Project scope and requirements" name="scope" as="textarea" />
+                <Field label="Message" name="message" as="textarea" required />
 
                 <div className="flex flex-col items-start justify-between gap-5 border-t border-plate-line pt-6 sm:flex-row sm:items-center">
                   <p className="max-w-xs text-xs leading-relaxed text-graphite/50">
@@ -83,7 +93,7 @@ export default function Contact() {
                 </div>
                 {error && (
                   <p className="text-sm text-red-700">
-                    We could not send your enquiry. Please try again or email us directly.
+                    Something went wrong. Please try again or contact us directly.
                   </p>
                 )}
               </form>
@@ -121,11 +131,19 @@ export default function Contact() {
               <dl className="mt-12 space-y-6 font-mono text-sm">
                 <div>
                   <dt className="text-[10px] tracking-[0.24em] text-plate-line/45">EMAIL</dt>
-                  <dd className="mt-2 break-words text-chalk">akshayavinodkunnathu@gmail.com</dd>
+                  <dd className="mt-2 break-words text-chalk">{siteContent.email}</dd>
                 </div>
                 <div>
                   <dt className="text-[10px] tracking-[0.24em] text-plate-line/45">PHONE</dt>
-                  <dd className="mt-2 text-chalk">+971 [ office number ]</dd>
+                  <dd className="mt-2 text-chalk">{siteContent.phone}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] tracking-[0.24em] text-plate-line/45">ADDRESS</dt>
+                  <dd className="mt-2 leading-relaxed text-chalk">
+                    Building {siteContent.address.building}, {siteContent.address.street}<br />
+                    {siteContent.address.district}, {siteContent.address.city} {siteContent.address.postalCode}<br />
+                    {siteContent.address.country}
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-[10px] tracking-[0.24em] text-plate-line/45">HOURS</dt>
@@ -167,12 +185,14 @@ function Field({
   type = "text",
   as,
   placeholder,
+  required = false,
 }: {
   label: string;
   name: string;
   type?: string;
   as?: "textarea";
   placeholder?: string;
+  required?: boolean;
 }) {
   const common =
     "w-full border border-plate-line bg-plate px-5 text-sm text-graphite outline-none transition-all placeholder:text-graphite/35 hover:border-graphite/30 focus:border-safety focus:bg-white focus:ring-2 focus:ring-safety/15";
@@ -184,13 +204,40 @@ function Field({
       {as === "textarea" ? (
         <textarea
           name={name}
+          required={required}
           rows={4}
           placeholder={placeholder}
           className={`${common} min-h-32 resize-y rounded-3xl py-4`}
         />
       ) : (
-        <input name={name} type={type} placeholder={placeholder} className={`${common} h-12 rounded-full`} />
+        <input
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          required={required}
+          className={`${common} h-12 rounded-full`}
+        />
       )}
+    </label>
+  );
+}
+
+function SelectField({ label, name }: { label: string; name: string }) {
+  const common =
+    "w-full border border-plate-line bg-plate px-5 text-sm text-graphite outline-none transition-all hover:border-graphite/30 focus:border-safety focus:bg-white focus:ring-2 focus:ring-safety/15";
+
+  return (
+    <label className="group block">
+      <span className="mb-2 block font-mono text-[10px] tracking-[0.2em] text-graphite/55 transition-colors group-focus-within:text-safety-dim">
+        {label.toUpperCase()}
+      </span>
+      <select name={name} required className={`${common} h-12 rounded-full`} defaultValue="">
+        <option value="" disabled>Select a service</option>
+        <option value="Construction">Construction</option>
+        <option value="Equipment Rental">Equipment Rental</option>
+        <option value="Material Supply">Material Supply</option>
+        <option value="Manpower Services">Manpower Services</option>
+      </select>
     </label>
   );
 }

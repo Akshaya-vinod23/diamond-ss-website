@@ -17,7 +17,7 @@ export default function Location() {
           </div>
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Saudi+Arabia"
+            href="https://maps.google.com/maps?q=26.282913208007812%2C50.19337844848633&z=17&hl=en"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-4 border border-safety px-5 py-3 text-sm font-medium text-safety-dim transition-colors hover:bg-safety hover:text-graphite"

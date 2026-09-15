@@ -70,10 +70,17 @@ npm run preview
 
 ## Contact form
 
-The form in `Contact.tsx` currently only shows a "request received"
-confirmation in the browser — it doesn't send an email yet. To make it
-functional, wire the `handleSubmit` function up to a form service
-(e.g. Formspree, Web3Forms) or your own backend endpoint.
+The form in `src/components/Contact.tsx` sends enquiries directly from the
+browser to [Web3Forms](https://web3forms.com/). Create a `.env` file in the
+project root and add your public Web3Forms access key:
+
+```bash
+VITE_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+```
+
+Restart `npm run dev` after changing `.env`. The key is intentionally exposed
+in the browser because Web3Forms uses public access keys. Do not put private
+server credentials in a `VITE_` variable.
 
 ## Deploying
 
