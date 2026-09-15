@@ -23,13 +23,16 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-plate py-24 md:py-32">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="process" className="relative overflow-hidden bg-graphite py-24 text-chalk md:py-32">
+      <div className="absolute inset-0 grid-dark opacity-70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(232,141,54,0.10),transparent_38%)]" aria-hidden="true" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
         <div className="mb-16 max-w-2xl">
           <span className="font-mono text-xs tracking-[0.25em] text-safety-dim">
             HOW IT WORKS
           </span>
-          <h2 className="font-display font-medium text-3xl md:text-4xl mt-4 leading-tight text-graphite">
+          <h2 className="font-display font-medium text-3xl md:text-4xl mt-4 leading-tight text-chalk">
             From requirement to coordinated delivery on site.
           </h2>
         </div>
@@ -38,7 +41,7 @@ export default function Process() {
           {STEPS.map((s, index) => (
             <div
               key={s.n}
-              className="group relative border border-plate-line bg-white p-6 shadow-[0_18px_40px_rgba(20,23,26,0.05)] transition-transform duration-300 hover:-translate-y-1"
+              className="group relative border border-[#2d2d2d] bg-[#121212] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center justify-between mb-6">
                 <span className="font-mono text-xs tracking-[0.25em] text-safety-dim">{s.n}</span>
@@ -47,8 +50,8 @@ export default function Process() {
                 </span>
               </div>
 
-              <h3 className="font-display text-xl text-graphite mb-3">{s.title}</h3>
-              <p className="text-sm leading-relaxed text-graphite/70">{s.body}</p>
+              <h3 className="font-display text-xl text-chalk mb-3">{s.title}</h3>
+              <p className="text-sm leading-relaxed text-chalk/70">{s.body}</p>
 
               {index < STEPS.length - 1 && (
                 <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-safety-dim">

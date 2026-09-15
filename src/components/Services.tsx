@@ -27,8 +27,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-graphite text-chalk py-24 md:py-32 relative">
-      <div className="absolute inset-0 grid-dark opacity-60" aria-hidden="true" />
+    <section id="services" className="relative bg-plate py-24 text-graphite md:py-32">
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
           <div>
@@ -39,16 +38,16 @@ export default function Services() {
               Contracting solutions backed by people and equipment.
             </h2>
           </div>
-          <p className="text-plate-line/70 text-sm max-w-xs">
+          <p className="text-graphite/65 text-sm max-w-xs">
             Diamond SS brings together contracting delivery, manpower deployment, and equipment support for active project sites.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {SERVICES.map((s) => (
-            <div key={s.code} className="group overflow-hidden border border-steel-line bg-graphite">
+            <div key={s.code} className="group overflow-hidden border border-plate-line bg-chalk">
               {s.images ? (
-                <div className="grid grid-cols-2 gap-px bg-steel-line">
+                <div className="grid grid-cols-2 gap-px bg-plate-line">
                   {s.images.map((image, index) => (
                     <img
                       key={image}
@@ -66,14 +65,14 @@ export default function Services() {
                 />
               )}
               <div className="p-8">
-                <div className="flex items-center justify-between font-mono text-[11px] tracking-widest text-safety mb-5">
+                <div className="flex items-center justify-between font-mono text-[11px] tracking-widest text-safety-dim mb-5">
                   <span>{s.code}</span>
-                  <span className="w-6 h-6 border border-steel-line flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 bg-safety" />
+                  <span className="w-6 h-6 border border-plate-line flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 bg-safety-dim" />
                   </span>
                 </div>
                 <h3 className="font-display text-2xl mb-3">{s.title}</h3>
-                <p className="text-plate-line/75 text-sm leading-relaxed">
+                <p className="text-graphite/65 text-sm leading-relaxed">
                   {s.body}
                 </p>
               </div>

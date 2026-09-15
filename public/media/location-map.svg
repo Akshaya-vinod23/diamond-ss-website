@@ -1,0 +1,22 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#14171A"/>
+  <g opacity="0.14" stroke="#F4F3EF">
+    <path d="M0 95H1200M0 190H1200M0 285H1200M0 380H1200M0 475H1200M0 570H1200M0 665H1200"/>
+    <path d="M100 0V760M200 0V760M300 0V760M400 0V760M500 0V760M600 0V760M700 0V760M800 0V760M900 0V760M1000 0V760M1100 0V760"/>
+  </g>
+  <path d="M295 128 431 91 584 124 704 187 837 208 960 300 1002 414 944 507 847 565 755 625 609 659 497 622 400 557 332 463 264 371Z" fill="#20262B" stroke="#E8871F" stroke-width="3"/>
+  <path d="M313 162 456 132 575 164 689 220 815 245 929 320 963 408 910 475 817 530 737 584 622 612 514 580 424 523 363 440 301 355Z" stroke="#F4F3EF" stroke-opacity="0.28" stroke-width="2" stroke-dasharray="8 12"/>
+  <path d="M210 640C371 559 475 430 603 360 723 295 835 277 1030 146" stroke="#E8871F" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 18"/>
+  <g transform="translate(625 337)">
+    <circle r="42" fill="#E8871F" fill-opacity="0.16"/>
+    <circle r="25" fill="#E8871F"/>
+    <path d="M0-13C-8-13-14-7-14 1c0 10 14 25 14 25S14 11 14 1C14-7 8-13 0-13Z" fill="#14171A"/>
+    <circle cy="1" r="5" fill="#E8871F"/>
+  </g>
+  <g fill="#F4F3EF" font-family="Arial, sans-serif">
+    <text x="78" y="92" font-size="18" letter-spacing="5" fill="#E8871F">OPERATING REGION</text>
+    <text x="78" y="142" font-size="42" font-weight="600">SAUDI ARABIA</text>
+    <text x="78" y="690" font-size="15" letter-spacing="3" opacity="0.65">CONTRACTING • MANPOWER • EQUIPMENT</text>
+    <text x="655" y="330" font-size="14" letter-spacing="2" fill="#E8871F">PROJECT NETWORK</text>
+  </g>
+</svg>

@@ -4,6 +4,7 @@ const LINKS = [
   { href: "#services", label: "Services" },
   { href: "#services", label: "Manpower & Equipment" },
   { href: "#process", label: "Process" },
+  { href: "#location", label: "Location" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -26,7 +27,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 shrink-0">
-          <span className="flex h-10 w-10 items-center justify-center overflow-hidden bg-white">
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden border border-safety/60 bg-chalk p-1">
             <img
               src="/media/diamond-logo.png"
               alt="Diamond SS Contracting Services"
