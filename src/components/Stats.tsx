@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const metrics = [
   { value: 4, suffix: "+", label: "Years in operation", note: "Established 2023" },
   { value: 150, suffix: "+", label: "Projects supported", note: "Across Saudi Arabia" },
-  { value: 4, suffix: "", label: "Core service lines", note: "Integrated delivery" },
+  { value: 3, suffix: "", label: "Core service lines", note: "Integrated delivery" },
   { value: 100, suffix: "%", label: "Saudi market focus", note: "Kingdom-wide coverage" },
 ];
 

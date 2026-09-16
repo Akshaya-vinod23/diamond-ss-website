@@ -36,7 +36,7 @@ export default function Footer() {
 
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-safety-dim">Contact</p>
-            <address className="mt-5 space-y-3 text-sm not-italic leading-relaxed">
+            <address className="mt-5 space-y-3 font-mono text-sm not-italic leading-relaxed">
               <a href={`mailto:${siteContent.email}`} className="block transition-colors hover:text-graphite">
                 {siteContent.email}
               </a>
