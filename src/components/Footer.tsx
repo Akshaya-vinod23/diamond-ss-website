@@ -30,7 +30,7 @@ export default function Footer() {
               <a href="#services" className="block transition-colors hover:text-graphite">Contracting Services</a>
               <a href="#services" className="block transition-colors hover:text-graphite">Manpower Supply</a>
               <a href="#services" className="block transition-colors hover:text-graphite">Equipment Supply</a>
-              <a href="#process" className="block transition-colors hover:text-graphite">Project Process</a>
+              
             </nav>
           </div>
 
@@ -42,7 +42,7 @@ export default function Footer() {
               </a>
               <p>{siteContent.phone}</p>
               <p>Saudi Arabia</p>
-              <p>Sun - Thu, 08:00 - 18:00</p>
+              <p>Sat - Thu, 8:00 AM - 9:00 PM</p>
             </address>
           </div>
         </div>

@@ -20,8 +20,8 @@ const slides: Slide[] = [
     title: "One dependable partner for the work, the workforce, and the equipment.",
     subtitle:
       "Diamond SS delivers practical contracting solutions, skilled manpower, and project-ready equipment for demanding construction and industrial environments.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+    image:"/media/equipment.jpg",
+      //"https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
     buttonText: "Discuss Your Project",
     buttonHref: "#contact",
   },
@@ -32,8 +32,8 @@ const slides: Slide[] = [
     title: "Build with capable crews, clear coordination, and the right equipment.",
     subtitle:
       "From planned contracting packages to manpower deployment and equipment supply, our teams scale with your programme and site requirements.",
-    image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
+    image:  "/media/contracting.jpg",
+      //"https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
     buttonText: "Explore Services",
     buttonHref: "#services",
   },

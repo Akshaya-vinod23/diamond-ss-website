@@ -147,7 +147,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <dt className="text-[10px] tracking-[0.24em] text-plate-line/45">HOURS</dt>
-                  <dd className="mt-2 text-chalk">Sun - Thu, 08:00 - 18:00</dd>
+                  <dd className="mt-2 text-chalk">Sat - Thu, 8:00 AM - 9:00 PM</dd>
                 </div>
               </dl>
 

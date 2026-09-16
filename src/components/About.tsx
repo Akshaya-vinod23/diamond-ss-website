@@ -35,7 +35,8 @@ export default function About() {
             </div>
             <div className="overflow-hidden rounded-none border border-plate-line bg-white shadow-[0_18px_50px_rgba(20,23,26,0.08)]">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+                src="/media/manpower.jpg"
+                //"https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
                 alt="Industrial site manpower and equipment"
                 className="h-72 w-full object-cover"
               />
